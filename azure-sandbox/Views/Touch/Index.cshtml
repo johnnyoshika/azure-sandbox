@@ -12,19 +12,19 @@
     <style>
         div { margin: 10px; padding: 10px; }
         span { background: #ccc; }
-        #cursor-pointer span { cursor:pointer; }
+        #cursor-pointer { cursor:pointer; }
     </style>
 </head>
 <body>
 
-    <div id="click">
-        <span>click</span>
+    <div>
+        <span id="click">click</span>
     </div>
-    <div id="cursor-pointer">
-        <span>Cursor Pointer: http://stackoverflow.com/a/17490775/188740 </span>
+    <div>
+        <span id="cursor-pointer">Cursor Pointer: http://stackoverflow.com/a/17490775/188740 </span>
     </div>
-    <div id="click-and-touchstart">
-        <span>click and touchstart</span>
+    <div>
+        <span id="click-and-touchstart">click and touchstart</span>
     </div>
 
     <ul></ul>
@@ -37,9 +37,9 @@
                 $('ul').append('<li>click</li>');
             };
 
-            $('#click').on('click', 'span', result);
-            $('#cursor-pointer').on('click', 'span', result);
-            $('#click-and-touchstart').on('click touchstart', 'span', result);
+            $(document).on('click', '#click', result);
+            $(document).on('click', '#cursor-pointer', result);
+            $(document).on('click touchstart', '#click-and-touchstart', result);
 
         }());
     </script>
